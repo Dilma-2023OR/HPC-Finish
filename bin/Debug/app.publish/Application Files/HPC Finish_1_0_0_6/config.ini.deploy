@@ -1,0 +1,7 @@
+[RUNCARD_INFO]
+warehouseBin=INVENTORY
+warehouseLoc=INVENTORY
+machineID=
+partclass=FINISH GOOD
+opcode=A102
+seqnum=10

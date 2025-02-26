@@ -1,0 +1,1327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="urn:runcard_wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="urn:runcard_wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="urn:runcard_wsdl">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="unitStatus">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="rework" type="xsd:integer" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="cust_name" type="xsd:string" />
+          <xsd:element name="cust_partnum" type="xsd:string" />
+          <xsd:element name="cust_partrev" type="xsd:string" />
+          <xsd:element name="cust_serial" type="xsd:string" />
+          <xsd:element name="mrk_partnum" type="xsd:string" />
+          <xsd:element name="mrk_partrev" type="xsd:string" />
+          <xsd:element name="prr_config_id" type="xsd:string" />
+          <xsd:element name="prr_config_rev" type="xsd:string" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+          <xsd:element name="datecode" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="unitDataItem">
+        <xsd:all>
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="fieldgroupid" type="xsd:int" />
+          <xsd:element name="fieldgroupname" type="xsd:string" />
+          <xsd:element name="fieldseq" type="xsd:int" />
+          <xsd:element name="fieldname" type="xsd:string" />
+          <xsd:element name="fielddata" type="xsd:string" />
+          <xsd:element name="spec_trip" type="xsd:int" />
+          <xsd:element name="spec_override" type="xsd:int" />
+          <xsd:element name="moddate" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="unitData">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:unitDataItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="TestItem">
+        <xsd:all>
+          <xsd:element name="category" type="xsd:string" />
+          <xsd:element name="system" type="xsd:string" />
+          <xsd:element name="system_id" type="xsd:string" />
+          <xsd:element name="program" type="xsd:string" />
+          <xsd:element name="program_rev" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="unitTestConfig">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:TestItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="WarehouseItem">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="WarehouseItemList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:WarehouseItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="InventoryItem">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="part_bin" type="xsd:string" />
+          <xsd:element name="part_class" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="sublotnum" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="operator" type="xsd:string" />
+          <xsd:element name="rework" type="xsd:int" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="factory" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+          <xsd:element name="carrier_type" type="xsd:string" />
+          <xsd:element name="carrier_id" type="xsd:string" />
+          <xsd:element name="carrier_row" type="xsd:int" />
+          <xsd:element name="carrier_col" type="xsd:int" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="fa_code" type="xsd:string" />
+          <xsd:element name="comment" type="xsd:string" />
+          <xsd:element name="moddate" type="xsd:string" />
+          <xsd:element name="datecode" type="xsd:string" />
+          <xsd:element name="exp_date" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="InventoryItemList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:InventoryItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="transactionItem">
+        <xsd:all>
+          <xsd:element name="username" type="xsd:string" />
+          <xsd:element name="transaction" type="xsd:string" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="trans_qty" type="xsd:float" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="machine_id" type="xsd:string" />
+          <xsd:element name="comment" type="xsd:string" />
+          <xsd:element name="defect_code" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="dataItem">
+        <xsd:all>
+          <xsd:element name="fieldname" type="xsd:string" />
+          <xsd:element name="fielddata" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="inputData">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:dataItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="bomItem">
+        <xsd:all>
+          <xsd:element name="item_partnum" type="xsd:string" />
+          <xsd:element name="item_partrev" type="xsd:string" />
+          <xsd:element name="item_serial" type="xsd:string" />
+          <xsd:element name="item_qty" type="xsd:float" />
+          <xsd:element name="item_lotnum" type="xsd:string" />
+          <xsd:element name="item_sublotnum" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="inputBOM">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:bomItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="reworkSettings">
+        <xsd:all>
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element name="category" type="xsd:string" />
+          <xsd:element name="rework_to_seqnum" type="xsd:int" />
+          <xsd:element name="rework_to_opcode" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="userInfo">
+        <xsd:all>
+          <xsd:element name="username" type="xsd:string" />
+          <xsd:element name="firstname" type="xsd:string" />
+          <xsd:element name="lastname" type="xsd:string" />
+          <xsd:element name="access_level" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="unitBOM">
+        <xsd:all>
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="item" type="xsd:int" />
+          <xsd:element name="part_class" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="units" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="inv_consume" type="xsd:int" />
+          <xsd:element name="description" type="xsd:string" />
+          <xsd:element name="alt_for_item" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="BOMConsumption">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:unitBOM[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="StepInstruction">
+        <xsd:all>
+          <xsd:element name="opdesc" type="xsd:string" />
+          <xsd:element name="instr_comments" type="xsd:string" />
+          <xsd:element name="instr_doc_link" type="xsd:string" />
+          <xsd:element name="eng_instr" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="InputFields">
+        <xsd:all>
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="fieldgroupid" type="xsd:string" />
+          <xsd:element name="fieldgroupname" type="xsd:string" />
+          <xsd:element name="fieldseq" type="xsd:string" />
+          <xsd:element name="fieldname" type="xsd:string" />
+          <xsd:element name="fieldtype" type="xsd:string" />
+          <xsd:element name="datatype" type="xsd:string" />
+          <xsd:element name="units" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="InputFieldsArray">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:InputFields[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="machineStatus">
+        <xsd:all>
+          <xsd:element name="system_id" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="code" type="xsd:string" />
+          <xsd:element name="operator" type="xsd:string" />
+          <xsd:element name="comment" type="xsd:string" />
+          <xsd:element name="moddate" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="productionUnit">
+        <xsd:all>
+          <xsd:element name="username" type="xsd:string" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="trans_qty" type="xsd:float" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="inventoryItems">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:bomItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="unitBOMitem">
+        <xsd:all>
+          <xsd:element name="item" type="xsd:int" />
+          <xsd:element name="alt_for_item" type="xsd:int" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="units" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="inv_serial" type="xsd:string" />
+          <xsd:element name="inv_consume" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="unitBOMList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:unitBOMitem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="GenealogyItem">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="sublotnum" type="xsd:string" />
+          <xsd:element name="bom_partnum" type="xsd:string" />
+          <xsd:element name="bom_partrev" type="xsd:string" />
+          <xsd:element name="bom_serial" type="xsd:string" />
+          <xsd:element name="bom_lotnum" type="xsd:string" />
+          <xsd:element name="bom_sublotnum" type="xsd:string" />
+          <xsd:element name="bom_qty" type="xsd:float" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="carrier_id" type="xsd:string" />
+          <xsd:element name="carrier_row" type="xsd:int" />
+          <xsd:element name="carrier_col" type="xsd:int" />
+          <xsd:element name="trans_date" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="GenealogyItemList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:GenealogyItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="nextSerialInfo">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="carrierUnitItem">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="index" type="xsd:int" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="seqnum" type="xsd:int" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="rework" type="xsd:integer" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="carrier_id" type="xsd:string" />
+          <xsd:element name="carrier_row" type="xsd:integer" />
+          <xsd:element name="carrier_col" type="xsd:integer" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="carrierUnitList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:carrierUnitItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="transactionCarrier">
+        <xsd:all>
+          <xsd:element name="transaction" type="xsd:string" />
+          <xsd:element name="carrier_id" type="xsd:string" />
+          <xsd:element name="machine_id" type="xsd:string" />
+          <xsd:element name="warehouseloc" type="xsd:string" />
+          <xsd:element name="warehousebin" type="xsd:string" />
+          <xsd:element name="comment" type="xsd:string" />
+          <xsd:element name="defect_code" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="DefectItem">
+        <xsd:all>
+          <xsd:element name="opcode" type="xsd:string" />
+          <xsd:element name="defect_code" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="DefectCodeList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:DefectItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="workOrderItem">
+        <xsd:all>
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:int" />
+          <xsd:element name="status" type="xsd:string" />
+          <xsd:element name="priority" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="workOrderList">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:workOrderItem[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="msdTimerReturn">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="msd_level" type="xsd:string" />
+          <xsd:element name="unsealed" type="xsd:string" />
+          <xsd:element name="msd_remain_time" type="xsd:int" />
+          <xsd:element name="msd_exp_time" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="UnitProductFields">
+        <xsd:all>
+          <xsd:element name="serial" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="sublotnum" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:float" />
+          <xsd:element name="units" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="part_bin" type="xsd:string" />
+          <xsd:element name="part_class" type="xsd:string" />
+          <xsd:element name="carrier_id" type="xsd:string" />
+          <xsd:element name="carrier_row" type="xsd:int" />
+          <xsd:element name="carrier_col" type="xsd:int" />
+          <xsd:element name="datecode" type="xsd:string" />
+          <xsd:element name="exp_date" type="xsd:string" />
+          <xsd:element name="country_of_origin" type="xsd:string" />
+          <xsd:element name="factory" type="xsd:string" />
+          <xsd:element name="bom_number" type="xsd:string" />
+          <xsd:element name="bom_revision" type="xsd:string" />
+          <xsd:element name="prr_config_id" type="xsd:string" />
+          <xsd:element name="prr_config_rev" type="xsd:string" />
+          <xsd:element name="rel_level" type="xsd:string" />
+          <xsd:element name="mrk_partnum" type="xsd:string" />
+          <xsd:element name="mrk_partrev" type="xsd:string" />
+          <xsd:element name="cust_name" type="xsd:string" />
+          <xsd:element name="cust_partnum" type="xsd:string" />
+          <xsd:element name="cust_partrev" type="xsd:string" />
+          <xsd:element name="cust_serial" type="xsd:string" />
+          <xsd:element name="cust_bom_number" type="xsd:string" />
+          <xsd:element name="cust_bom_revision" type="xsd:string" />
+          <xsd:element name="cust_upc_code" type="xsd:string" />
+          <xsd:element name="cust_date_code" type="xsd:string" />
+          <xsd:element name="supp_name" type="xsd:string" />
+          <xsd:element name="supp_partnum" type="xsd:string" />
+          <xsd:element name="supp_partrev" type="xsd:string" />
+          <xsd:element name="supp_serial" type="xsd:string" />
+          <xsd:element name="supp_upc_code" type="xsd:string" />
+          <xsd:element name="supp_date_code" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="workOrderInfo">
+        <xsd:all>
+          <xsd:element name="workorder" type="xsd:string" />
+          <xsd:element name="type" type="xsd:string" />
+          <xsd:element name="lotnum" type="xsd:string" />
+          <xsd:element name="partnum" type="xsd:string" />
+          <xsd:element name="partrev" type="xsd:string" />
+          <xsd:element name="description" type="xsd:string" />
+          <xsd:element name="qty" type="xsd:int" />
+          <xsd:element name="units" type="xsd:string" />
+          <xsd:element name="target_start_date" type="xsd:string" />
+          <xsd:element name="target_end_date" type="xsd:string" />
+          <xsd:element name="issue_date" type="xsd:string" />
+          <xsd:element name="originator" type="xsd:string" />
+          <xsd:element name="po_number" type="xsd:string" />
+          <xsd:element name="priority" type="xsd:string" />
+          <xsd:element name="create_serials" type="xsd:int" />
+        </xsd:all>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="getUnitStatusRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitStatusResponse">
+    <wsdl:part name="return" type="tns:unitStatus" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitDataRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="opcode" type="xsd:string" />
+    <wsdl:part name="fieldgroupname" type="xsd:string" />
+    <wsdl:part name="fieldname" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitDataResponse">
+    <wsdl:part name="return" type="tns:unitData" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTestConfigRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitTestConfigResponse">
+    <wsdl:part name="return" type="tns:unitTestConfig" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchWarehouseBinItemsRequest">
+    <wsdl:part name="warehousebin" type="xsd:string" />
+    <wsdl:part name="warehouseloc" type="xsd:string" />
+    <wsdl:part name="partnum" type="xsd:string" />
+    <wsdl:part name="partrev" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchWarehouseBinItemsResponse">
+    <wsdl:part name="return" type="tns:WarehouseItemList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchInventoryItemsRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="status" type="xsd:string" />
+    <wsdl:part name="partnum" type="xsd:string" />
+    <wsdl:part name="partrev" type="xsd:string" />
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="opcode" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:int" />
+    <wsdl:part name="warehouseloc" type="xsd:string" />
+    <wsdl:part name="warehousebin" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchInventoryItemsResponse">
+    <wsdl:part name="return" type="tns:InventoryItemList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="transactUnitRequest">
+    <wsdl:part name="request" type="tns:transactionItem" />
+    <wsdl:part name="inputData" type="tns:inputData" />
+    <wsdl:part name="bomData" type="tns:inputBOM" />
+  </wsdl:message>
+  <wsdl:message name="transactUnitResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="reworkUnitRequest">
+    <wsdl:part name="request" type="tns:transactionItem" />
+    <wsdl:part name="settings" type="tns:reworkSettings" />
+  </wsdl:message>
+  <wsdl:message name="reworkUnitResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserStatusRequest">
+    <wsdl:part name="username" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="checkUserStatusResponse">
+    <wsdl:part name="return" type="tns:userInfo" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitBOMConsumptionRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitBOMConsumptionResponse">
+    <wsdl:part name="return" type="tns:BOMConsumption" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getWorkOrderStepInstructionsRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getWorkOrderStepInstructionsResponse">
+    <wsdl:part name="return" type="tns:StepInstruction" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getDataInputFieldsRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getDataInputFieldsResponse">
+    <wsdl:part name="return" type="tns:InputFieldsArray" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="registerUnitToWorkOrderRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="qty" type="xsd:float" />
+    <wsdl:part name="lotnum" type="xsd:string" />
+    <wsdl:part name="sublotnum" type="xsd:string" />
+    <wsdl:part name="warehousebin" type="xsd:string" />
+    <wsdl:part name="warehouseloc" type="xsd:string" />
+    <wsdl:part name="username" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="registerUnitToWorkOrderResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getMachineStatusRequest">
+    <wsdl:part name="system_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getMachineStatusResponse">
+    <wsdl:part name="return" type="tns:machineStatus" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="backFlushInventoryRequest">
+    <wsdl:part name="request" type="tns:productionUnit" />
+    <wsdl:part name="bomData" type="tns:inventoryItems" />
+  </wsdl:message>
+  <wsdl:message name="backFlushInventoryResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getUnitBOMItemsRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getUnitBOMItemsResponse">
+    <wsdl:part name="return" type="tns:unitBOMList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitInventoryPartBinRequest">
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="part_bin" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="updateUnitInventoryPartBinResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="pickUnitToWorkOrderRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="partnum" type="xsd:string" />
+    <wsdl:part name="partrev" type="xsd:string" />
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="warehousebin" type="xsd:string" />
+    <wsdl:part name="warehouseloc" type="xsd:string" />
+    <wsdl:part name="operator" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="pickUnitToWorkOrderResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchUnitGenealogyRequest">
+    <wsdl:part name="partnum" type="xsd:string" />
+    <wsdl:part name="partrev" type="xsd:string" />
+    <wsdl:part name="lotnum" type="xsd:string" />
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="opcode" type="xsd:string" />
+    <wsdl:part name="seqnum" type="xsd:int" />
+    <wsdl:part name="whereUsed" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="fetchUnitGenealogyResponse">
+    <wsdl:part name="return" type="tns:GenealogyItemList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="logMachineEnvironmentDataRequest">
+    <wsdl:part name="system_id" type="xsd:string" />
+    <wsdl:part name="warehouseloc" type="xsd:string" />
+    <wsdl:part name="opcode" type="xsd:string" />
+    <wsdl:part name="name" type="xsd:string" />
+    <wsdl:part name="value" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="logMachineEnvironmentDataResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getNextAvailableSerialRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getNextAvailableSerialResponse">
+    <wsdl:part name="return" type="tns:nextSerialInfo" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="assignUnitToCarrierRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+    <wsdl:part name="carrier_id" type="xsd:string" />
+    <wsdl:part name="carrier_col" type="xsd:string" />
+    <wsdl:part name="carrier_row" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="assignUnitToCarrierResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="removeUnitFromCarrierRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+    <wsdl:part name="carrier_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="removeUnitFromCarrierResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getCarrierStatusRequest">
+    <wsdl:part name="carrier_id" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+    <wsdl:part name="machine_opcode_only" type="xsd:int" />
+  </wsdl:message>
+  <wsdl:message name="getCarrierStatusResponse">
+    <wsdl:part name="carrierStatus" type="tns:carrierUnitList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="transactCarrierRequest">
+    <wsdl:part name="request" type="tns:transactionCarrier" />
+    <wsdl:part name="inputData" type="tns:inputData" />
+    <wsdl:part name="bomData" type="tns:inputBOM" />
+  </wsdl:message>
+  <wsdl:message name="transactCarrierResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="printUnitLabelRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="printUnitLabelResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchDefectCodeListRequest">
+    <wsdl:part name="opcode" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchDefectCodeListResponse">
+    <wsdl:part name="return" type="tns:DefectCodeList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableWorkOrdersRequest">
+    <wsdl:part name="partnum" type="xsd:string" />
+    <wsdl:part name="partrev" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="getAvailableWorkOrdersResponse">
+    <wsdl:part name="return" type="tns:workOrderList" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="scrapInventoryItemRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="scrapInventoryItemResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="isValidWorkOrderBomComponentRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="bom_item_serial" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="isValidWorkOrderBomComponentResponse">
+    <wsdl:part name="return" type="xsd:int" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="generateNewWorkOrderSerialRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="generateNewWorkOrderSerialResponse">
+    <wsdl:part name="return" type="xsd:string" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="generateNewWorkOrderBatchSerialRequest">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="batch_qty" type="xsd:float" />
+    <wsdl:part name="username" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="generateNewWorkOrderBatchSerialResponse">
+    <wsdl:part name="return" type="xsd:string" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setMSDTimerRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="action" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="setMSDTimerResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+    <wsdl:part name="return" type="tns:msdTimerReturn" />
+  </wsdl:message>
+  <wsdl:message name="fetchUnitProductFieldsRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="fetchUnitProductFieldsResponse">
+    <wsdl:part name="return" type="tns:UnitProductFields" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="issueWorkOrderRequest">
+    <wsdl:part name="workOrderInfo" type="tns:workOrderInfo" />
+  </wsdl:message>
+  <wsdl:message name="issueWorkOrderResponse">
+    <wsdl:part name="workorder" type="xsd:string" />
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseInventoryItemRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="releaseInventoryItemResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="holdInventoryItemRequest">
+    <wsdl:part name="serial" type="xsd:string" />
+    <wsdl:part name="machine_id" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:message name="holdInventoryItemResponse">
+    <wsdl:part name="error" type="xsd:int" />
+    <wsdl:part name="msg" type="xsd:string" />
+  </wsdl:message>
+  <wsdl:portType name="runcard_wsdlPortType">
+    <wsdl:operation name="getUnitStatus">
+      <documentation>Returns unit status for specified serial</documentation>
+      <wsdl:input message="tns:getUnitStatusRequest" />
+      <wsdl:output message="tns:getUnitStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitData">
+      <documentation>Returns work order data captured for the specified unit</documentation>
+      <wsdl:input message="tns:getUnitDataRequest" />
+      <wsdl:output message="tns:getUnitDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTestConfig">
+      <documentation>Returns test configuration for this unit</documentation>
+      <wsdl:input message="tns:getUnitTestConfigRequest" />
+      <wsdl:output message="tns:getUnitTestConfigResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchWarehouseBinItems">
+      <documentation>Returns list of products located in the specified warehouse bin and/or location</documentation>
+      <wsdl:input message="tns:fetchWarehouseBinItemsRequest" />
+      <wsdl:output message="tns:fetchWarehouseBinItemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchInventoryItems">
+      <documentation>Returns list of inventory items per the specified search fields</documentation>
+      <wsdl:input message="tns:fetchInventoryItemsRequest" />
+      <wsdl:output message="tns:fetchInventoryItemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="transactUnit">
+      <documentation>Executes a transaction in RunCard for the specified unit.</documentation>
+      <wsdl:input message="tns:transactUnitRequest" />
+      <wsdl:output message="tns:transactUnitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="reworkUnit">
+      <documentation>Executes a rework transaction in RunCard for the specified unit.</documentation>
+      <wsdl:input message="tns:reworkUnitRequest" />
+      <wsdl:output message="tns:reworkUnitResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="checkUserStatus">
+      <documentation>Returns user info, or error and message if username not registered for API access, or account is blocked.</documentation>
+      <wsdl:input message="tns:checkUserStatusRequest" />
+      <wsdl:output message="tns:checkUserStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitBOMConsumption">
+      <documentation>Returns BOM Consumption units</documentation>
+      <wsdl:input message="tns:getUnitBOMConsumptionRequest" />
+      <wsdl:output message="tns:getUnitBOMConsumptionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getWorkOrderStepInstructions">
+      <documentation>Returns instructions of work order at a specific step</documentation>
+      <wsdl:input message="tns:getWorkOrderStepInstructionsRequest" />
+      <wsdl:output message="tns:getWorkOrderStepInstructionsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getDataInputFields">
+      <wsdl:input message="tns:getDataInputFieldsRequest" />
+      <wsdl:output message="tns:getDataInputFieldsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="registerUnitToWorkOrder">
+      <wsdl:input message="tns:registerUnitToWorkOrderRequest" />
+      <wsdl:output message="tns:registerUnitToWorkOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getMachineStatus">
+      <documentation>Returns machine status for specified system ID</documentation>
+      <wsdl:input message="tns:getMachineStatusRequest" />
+      <wsdl:output message="tns:getMachineStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="backFlushInventory">
+      <documentation>Backflushes inventory in RunCard for the specified unit, for the specified BOM items.</documentation>
+      <wsdl:input message="tns:backFlushInventoryRequest" />
+      <wsdl:output message="tns:backFlushInventoryResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getUnitBOMItems">
+      <documentation>Returns BOM components for the specified seria, work order and step.  If work order is left blank, function will search for current work order serial is associated with.  Step can be left empty as well for all BOM items registered across all steps.  </documentation>
+      <wsdl:input message="tns:getUnitBOMItemsRequest" />
+      <wsdl:output message="tns:getUnitBOMItemsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="updateUnitInventoryPartBin">
+      <documentation>Updates inventory part bin assignment for the specified unit.</documentation>
+      <wsdl:input message="tns:updateUnitInventoryPartBinRequest" />
+      <wsdl:output message="tns:updateUnitInventoryPartBinResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="pickUnitToWorkOrder">
+      <wsdl:input message="tns:pickUnitToWorkOrderRequest" />
+      <wsdl:output message="tns:pickUnitToWorkOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchUnitGenealogy">
+      <documentation>Returns list of genealogy / consumed BOM items per the specified search fields</documentation>
+      <wsdl:input message="tns:fetchUnitGenealogyRequest" />
+      <wsdl:output message="tns:fetchUnitGenealogyResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="logMachineEnvironmentData">
+      <wsdl:input message="tns:logMachineEnvironmentDataRequest" />
+      <wsdl:output message="tns:logMachineEnvironmentDataResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextAvailableSerial">
+      <documentation>Returns next available unused serial on the specified work order</documentation>
+      <wsdl:input message="tns:getNextAvailableSerialRequest" />
+      <wsdl:output message="tns:getNextAvailableSerialResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="assignUnitToCarrier">
+      <documentation>Assigns carrier information to the specified unit serial number</documentation>
+      <wsdl:input message="tns:assignUnitToCarrierRequest" />
+      <wsdl:output message="tns:assignUnitToCarrierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="removeUnitFromCarrier">
+      <documentation>Removed serial number from the specified carrier ID</documentation>
+      <wsdl:input message="tns:removeUnitFromCarrierRequest" />
+      <wsdl:output message="tns:removeUnitFromCarrierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getCarrierStatus">
+      <documentation>Returns status for the specified carrier ID</documentation>
+      <wsdl:input message="tns:getCarrierStatusRequest" />
+      <wsdl:output message="tns:getCarrierStatusResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="transactCarrier">
+      <documentation>Executes a transaction in RunCard for the specified unit.</documentation>
+      <wsdl:input message="tns:transactCarrierRequest" />
+      <wsdl:output message="tns:transactCarrierResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="printUnitLabel">
+      <documentation>Submits a label print job request for the specified serial.</documentation>
+      <wsdl:input message="tns:printUnitLabelRequest" />
+      <wsdl:output message="tns:printUnitLabelResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchDefectCodeList">
+      <documentation>Returns list of defect codes assigned to the specified operation</documentation>
+      <wsdl:input message="tns:fetchDefectCodeListRequest" />
+      <wsdl:output message="tns:fetchDefectCodeListResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableWorkOrders">
+      <documentation>Returns a list of available work orders for the specified part number and revision (can set to '' if not required)</documentation>
+      <wsdl:input message="tns:getAvailableWorkOrdersRequest" />
+      <wsdl:output message="tns:getAvailableWorkOrdersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="scrapInventoryItem">
+      <documentation>Scraps specified serial in inventory</documentation>
+      <wsdl:input message="tns:scrapInventoryItemRequest" />
+      <wsdl:output message="tns:scrapInventoryItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidWorkOrderBomComponent">
+      <documentation>Returns 1 if serial belongs to a part number listed as a BOM item for this work order, 0 otherwise.</documentation>
+      <wsdl:input message="tns:isValidWorkOrderBomComponentRequest" />
+      <wsdl:output message="tns:isValidWorkOrderBomComponentResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="generateNewWorkOrderSerial">
+      <documentation>Generates and returns a new serial number for the specified work order. Either a user name and/or machine ID must be specified.</documentation>
+      <wsdl:input message="tns:generateNewWorkOrderSerialRequest" />
+      <wsdl:output message="tns:generateNewWorkOrderSerialResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="generateNewWorkOrderBatchSerial">
+      <documentation>Generates and returns a new batch item serial number, with specified unit quantity, on the target work order. Either a user name and/or machine ID must be specified.</documentation>
+      <wsdl:input message="tns:generateNewWorkOrderBatchSerialRequest" />
+      <wsdl:output message="tns:generateNewWorkOrderBatchSerialResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="setMSDTimer">
+      <documentation>Start/Stop MSD timer.</documentation>
+      <wsdl:input message="tns:setMSDTimerRequest" />
+      <wsdl:output message="tns:setMSDTimerResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="fetchUnitProductFields">
+      <documentation>Returns list of product level fields assigned to the specified serial</documentation>
+      <wsdl:input message="tns:fetchUnitProductFieldsRequest" />
+      <wsdl:output message="tns:fetchUnitProductFieldsResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="issueWorkOrder">
+      <documentation>Issue work order for production release.</documentation>
+      <wsdl:input message="tns:issueWorkOrderRequest" />
+      <wsdl:output message="tns:issueWorkOrderResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseInventoryItem">
+      <documentation>release specified serial in inventory</documentation>
+      <wsdl:input message="tns:releaseInventoryItemRequest" />
+      <wsdl:output message="tns:releaseInventoryItemResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="holdInventoryItem">
+      <documentation>hold specified serial in inventory</documentation>
+      <wsdl:input message="tns:holdInventoryItemRequest" />
+      <wsdl:output message="tns:holdInventoryItemResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="runcard_wsdlBinding" type="tns:runcard_wsdlPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <wsdl:operation name="getUnitStatus">
+      <soap:operation soapAction="urn:runcard_wsdl#getUnitStatus" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitData">
+      <soap:operation soapAction="urn:runcard_wsdl#getUnitData" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitTestConfig">
+      <soap:operation soapAction="urn:runcard_wsdl#getUnitTestConfig" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchWarehouseBinItems">
+      <soap:operation soapAction="urn:runcard_wsdl#fetchWarehouseBinItems" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchInventoryItems">
+      <soap:operation soapAction="urn:runcard_wsdl#fetchInventoryItems" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transactUnit">
+      <soap:operation soapAction="urn:runcard_wsdl#transactUnit" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="reworkUnit">
+      <soap:operation soapAction="urn:runcard_wsdl#reworkUnit" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkUserStatus">
+      <soap:operation soapAction="urn:runcard_wsdl#checkUserStatus" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitBOMConsumption">
+      <soap:operation soapAction="urn:runcard_wsdl#getUnitBOMConsumption" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWorkOrderStepInstructions">
+      <soap:operation soapAction="urn:runcard_wsdl#getWorkOrderStepInstructions" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getDataInputFields">
+      <soap:operation soapAction="urn:runcard_wsdl#getDataInputFields" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerUnitToWorkOrder">
+      <soap:operation soapAction="urn:runcard_wsdl#registerUnitToWorkOrder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMachineStatus">
+      <soap:operation soapAction="urn:runcard_wsdl#getMachineStatus" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="backFlushInventory">
+      <soap:operation soapAction="urn:runcard_wsdl#backFlushInventory" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUnitBOMItems">
+      <soap:operation soapAction="urn:runcard_wsdl#getUnitBOMItems" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateUnitInventoryPartBin">
+      <soap:operation soapAction="urn:runcard_wsdl#updateUnitInventoryPartBin" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pickUnitToWorkOrder">
+      <soap:operation soapAction="urn:runcard_wsdl#pickUnitToWorkOrder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchUnitGenealogy">
+      <soap:operation soapAction="urn:runcard_wsdl#fetchUnitGenealogy" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logMachineEnvironmentData">
+      <soap:operation soapAction="urn:runcard_wsdl#logMachineEnvironmentData" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextAvailableSerial">
+      <soap:operation soapAction="urn:runcard_wsdl#getNextAvailableSerial" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="assignUnitToCarrier">
+      <soap:operation soapAction="urn:runcard_wsdl#assignUnitToCarrier" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="removeUnitFromCarrier">
+      <soap:operation soapAction="urn:runcard_wsdl#removeUnitFromCarrier" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCarrierStatus">
+      <soap:operation soapAction="urn:runcard_wsdl#getCarrierStatus" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="transactCarrier">
+      <soap:operation soapAction="urn:runcard_wsdl#transactCarrier" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="printUnitLabel">
+      <soap:operation soapAction="urn:runcard_wsdl#printUnitLabel" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchDefectCodeList">
+      <soap:operation soapAction="urn:runcard_wsdl#fetchDefectCodeList" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAvailableWorkOrders">
+      <soap:operation soapAction="urn:runcard_wsdl#getAvailableWorkOrders" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="scrapInventoryItem">
+      <soap:operation soapAction="urn:runcard_wsdl#scrapInventoryItem" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidWorkOrderBomComponent">
+      <soap:operation soapAction="urn:runcard_wsdl#isValidWorkOrderBomComponent" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateNewWorkOrderSerial">
+      <soap:operation soapAction="urn:runcard_wsdl#generateNewWorkOrderSerial" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="generateNewWorkOrderBatchSerial">
+      <soap:operation soapAction="urn:runcard_wsdl#generateNewWorkOrderBatchSerial" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setMSDTimer">
+      <soap:operation soapAction="urn:runcard_wsdl#setMSDTimer" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fetchUnitProductFields">
+      <soap:operation soapAction="urn:runcard_wsdl#fetchUnitProductFields" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="issueWorkOrder">
+      <soap:operation soapAction="urn:runcard_wsdl#issueWorkOrder" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseInventoryItem">
+      <soap:operation soapAction="urn:runcard_wsdl#releaseInventoryItem" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="holdInventoryItem">
+      <soap:operation soapAction="urn:runcard_wsdl#holdInventoryItem" style="rpc" />
+      <wsdl:input>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="urn:runcard_wsdl" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="runcard_wsdl">
+    <wsdl:port name="runcard_wsdlPort" binding="tns:runcard_wsdlBinding">
+      <soap:address location="http://mlxgumvlptfrd01.molex.com/runcard/soap/soap/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,116 @@
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe.config
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\HPC Finish.pdb
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.AssemblyReference.cache
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Main.resources
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Properties.Resources.resources
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.GenerateResource.cache
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.CoreCompileInputs.cache
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.pdb
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Buffers.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Memory.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.ValueTuple.dll
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Buffers.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Memory.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.SuggestedBindingRedirects.cache
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe.config
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.CopyComplete
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Message.resources
+C:\Users\sergil1\source\repos\HPC Finish\HPC Finish\bin\Debug\config.ini
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\config.ini
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe.config
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe.manifest
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.application
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.pdb
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Buffers.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Memory.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.ValueTuple.dll
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Buffers.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Memory.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.xml
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.AssemblyReference.cache
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.SuggestedBindingRedirects.cache
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe.config
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Main.resources
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Message.resources
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Properties.Resources.resources
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.GenerateResource.cache
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.CoreCompileInputs.cache
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe.manifest
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.application
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.pdb
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\config.ini
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe.config
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe.manifest
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.application
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.exe
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\HPC Finish.pdb
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Buffers.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Memory.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.ValueTuple.dll
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\MySqlConnector.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Buffers.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Memory.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Numerics.Vectors.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\bin\Debug\System.Threading.Tasks.Extensions.xml
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.AssemblyReference.cache
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.SuggestedBindingRedirects.cache
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe.config
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Main.resources
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Message.resources
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC_Finish.Properties.Resources.resources
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.GenerateResource.cache
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.CoreCompileInputs.cache
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe.manifest
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.application
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.Up2Date
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.exe
+G:\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.pdb
+\\gumfp01\group\programs\LABVIEW\MES (RUNCARD)\A. Production Apps\HPC\HPC Finish\HPC Finish\obj\Debug\HPC Finish.csproj.Up2Date
